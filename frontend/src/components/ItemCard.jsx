@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 function ItemCard({ item, onDelete }) {
+  const manufacturerCountry =
+    item.manufacturerCountry || item.country || item.manufacturer_country || "N/A";
+
   return (
     <div className="card">
       <img
@@ -11,7 +14,7 @@ function ItemCard({ item, onDelete }) {
       <h3>{item.name}</h3>
       <p><strong>Category:</strong> {item.category}</p>
       <p><strong>Price:</strong> ${item.price}</p>
-      <p><strong>Manufacturer Country:</strong> {item.manufacturerCountry}</p>
+      <p><strong>Manufacturer Country:</strong> {manufacturerCountry}</p>
       <p>{item.description}</p>
 
       <div className="card-actions">
